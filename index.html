@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/assets/icons/favicon/favicon-16x16.png" type="image/x-icon">
+    <!-- google icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/CSS/normalize.css">
+    <link rel="stylesheet" href="/assets/CSS/style.css">
+    <!-- script main -->
+    <script src="/assets/script/main.js" defer></script>
+    <!-- swiper slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <title>Divan.by</title>
+</head>
+<body>
+       <div class="wrapper">
+        <div class="header-t">
+            <div class="header-t__left">
+                <div class="header-t__location"><span class="material-symbols-outlined">near_me</span>
+                    <button id="headerLocationCity">Минск</button><span class="material-symbols-outlined">expand_more</span></div>
+                    <div class="modal-overlay" id="modalOverlay"></div>
+                    <div class="header-t__location__modal-window">
+                        <div class="header-t__location__modal">
+                            <div class="header-t__location__modal-section1">
+                                <h2>Укажите свой город</h2>
+                                <span id="headerLocationCityClose" class="material-symbols-outlined">close</span>
+                            </div>
+                            <div class="header-t__location__modal-section2">
+                                <form action="/search" method="get">
+                                    <span onclick="performSearchModal()" id="searchModalHeader" class="material-symbols-outlined header-t__location__modal-section2__search-icon">search</span>
+                                    <input type="search" name="search-modal-header" placeholder="Выбирете город" class="header-t__location__modal-section2__search-input">
+                                    <span class="material-symbols-outlined header-t__location__modal-section2__search-clear">close</span>
+                                  </form>
+                            </div>
+                            <div class="header-t__location__modal-section3">
+                                <div class="header-t__location__modal-section3__left">
+                                    <a href="#">Минск</a>
+                                    <a href="#">Барановичи</a>
+                                    <a href="#">Бобруйск</a>
+                                    <a href="#">Борисов</a>
+                                    <a href="#">Брест</a>
+                                    <a href="#">Витебск</a>
+                                    <a href="#">Гомель</a>
+                                </div>
+                                <div class="header-t__location__modal-section3__right">
+                                    <a href="#">Гродно</a>
+                                    <a href="#">Могилев</a>
+                                    <a href="#">Молодечно</a>
+                                    <a href="#">Новополоцк</a>
+                                    <a href="#">Орша</a>
+                                    <a href="#">Полоцк</a>
+                                    <a href="#">Слуцк</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            <div class="header-t__number">
+                <button id="headerPhoneButton">+375 (29) 668-66-44</button>
+                <span class="material-symbols-outlined">expand_more</span>
+                <div class="modal-overlay" id="modalOverlay"></div>
+                <div class="header-t__number__form-wrapper">
+                    <div class="header-t__number__form-number">
+                        <div class="header-t__number__form-section1">
+                            <span class="material-symbols-outlined header-t__number__form-section1_close">close</span>
+                        </div>
+                        <h2>Закажите обратный звонок</h2>
+                        <div class="header-t__number__form-section2">
+                            <input type="text" placeholder="Имя" name="" id="">
+                            <input type="tel" placeholder="Номер телефона" name="" id="">
+                        </div>
+                        <div class="header-t__number__form-section3">
+                          <button>Свяжитесь со мной</button>
+                        </div>
+                        <div class="header-t__number__form-section4">
+                            <p>*При отправке заявки, я соглашаюсь с условиями <a href="">Политики конфиденциальности</a> и даю согласие на обработку персональных данных на их основе</p>
+                        </div>
+                        <div class="header-t__number__form-section5">
+                            <h3>Вы можете сэкономить время, позвонив нам прямо сейчас:</h3>
+                            <ul>
+                                <li><a href="tel:+375 (29) 668-66-44">+375 (29) 668-66-44</a></li>
+                                <li><a href="tel:+375 (33) 668-66-44">+375 (33) 668-66-44</a></li>
+                            </ul>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+            </div> 
+            <div class="header-t__right">
+                <div class="header-t__customers" id="headerCustumers">
+                    <button>Покупателям</button><span class="material-symbols-outlined">expand_more</span>
+                    <div class="header-t__customers__box">
+                        <ul>
+                            <li><a href="">О Divan.by</a></li>
+                            <li><a href="">Доставка и оплата</a></li>
+                            <li><a href="">Рассрочка и кредит</a></li>
+                            <li><a href="">Гарантия</a></li>
+                            <li><a href="">Контакты</a></li>
+                        </ul>
+                    </div>
+                </div>
+            <div class="header-t__bussines">
+                <a href="">Для бизнесса</a>
+            </div>
+            </div>
+        </div>
+        <div class="header-m">
+            <div class="header-m__logo">
+                <a href="index.html" class="header-m__logo__title">divan.by</a>
+                <p class="header-m__logo__slogan">своё найдется</p>
+            </div>
+            <div class="header-m__catalog">
+                <span class="material-symbols-outlined" id="menu-open">menu</span>
+                <span class="material-symbols-outlined" id="menu-close">close</span>
+                <button>Каталог</button>
+            </div>           
+            <div class="header-m__catalog-opend">
+                <div class="header-m__catalog-opend__content">
+                    <div class="header-m__catalog-opend__content-aside">
+                        <div class="header-m__catalog-opend__content-aside__link" id="sofasArmchairsButton">
+                            <img src="/assets/icons/icons menu/divan.svg" alt="icon">
+                            <a href="#">Диваны и кресла</a>
+                        </div>
+                        <div class="header-m__catalog-opend__content-aside__link" id="bedsMattressesButton">
+                            <img src="/assets/icons/icons menu/krovati.svg" alt="icon">
+                            <a href="#">Кровати и матрасы</a>
+                        </div>
+                        <div class="header-m__catalog-opend__content-aside__link" id="CabinetsShelvingButton">
+                            <img src="/assets/icons/icons menu/shkaf.svg" alt="icon">
+                            <a href="#">Шкафы и стеллажи</a>
+                        </div>
+                        <div class="header-m__catalog-opend__content-aside__link" id="CabinetsShelvingButton">
+                            <img src="/assets/icons/icons menu/table.svg" alt="icon">
+                            <a href="#">Комоды и тумбы</a>
+                        </div>
+                        <div class="header-m__catalog-opend__content-aside__link" id="CabinetsShelvingButton">
+                            <img src="/assets/icons/icons menu/tovary dla doma.svg" alt="icon">
+                            <a href="#">Стол и стулья</a>
+                        </div>
+                        <div class="header-m__catalog-opend__content-aside__link" id="CabinetsShelvingButton">
+                            <img src="/assets/icons/icons menu/tovary dla doma.svg" alt="icon">
+                            <a href="#">Товары для дома</a>
+                        </div>
+                        <div class="header-m__catalog-opend__content-aside__link" id="CabinetsShelvingButton">
+                            <img src="/assets/icons/icons menu/sadovaya mebel.svg" alt="icon">
+                            <a href="#">Садовая мебель</a>
+                        </div>
+                        <div class="header-m__catalog-opend__content-aside__link" id="CabinetsShelvingButton">
+                            <img src="/assets/icons/icons menu/room.svg" alt="icon">
+                            <a href="#">Комнаты</a>
+                        </div>
+                        <div class="header-m__catalog-opend__content-aside__link" id="CabinetsShelvingButton">
+                            <img src="/assets/icons/icons menu/sale.svg" alt="icon">
+                            <a href="#">Sale</a>
+                        </div>
+                        <div class="header-m__catalog-opend__content-aside__link" id="CabinetsShelvingButton">
+                            <img src="/assets/icons/icons menu/new.svg" alt="icon">
+                            <a href="#">Новинки</a>
+                        </div>
+                        <div class="header-m__catalog-opend__content-aside__link" id="CabinetsShelvingButton">
+                            <img src="/assets/icons/icons menu/akcii.svg" alt="icon">
+                            <a href="#">Акции</a>
+                        </div>
+                    </div>
+                    <div class="header-m__catalog-opend__content-main" id="sofasArmchairs">
+                        <div class="header-m__catalog-opend__content-main__boxs">
+                            <div class="header-m__catalog-opend__content-main__box-top hover__line-effect">
+                                <a href="/divany-i-kresla.html">Диваны и кресла</a>
+                            </div>
+                            <div class="header-m__catalog-opend__content-main__box-sides">
+                                <div class="header-m__catalog-opend__content-main__link-left">
+                                    <ul>
+                                        <li><a href="#">Диваны</a></li>
+                                        <li><a href="#">Прямые диваны</a></li>
+                                        <li><a href="#">Угловые диваны</a></li>
+                                        <li><a href="#">Модульные диваны</a></li>
+                                        <li><a href="#">Кушетки</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li>Диваны по назначению</li>
+                                        <li><a href="#">Диваны и кровати</a></li>
+                                        <li><a href="#">Мини диваны</a></li>
+                                        <li><a href="#">Детские диваны</a></li>
+                                        <li><a href="#">Ортопедические диваны</a></li>
+                                        <li><a href="#">Офисные диваны</a></li>
+                                        <li><a href="#">Диваны и кухни</a></li>
+                                        <li><a href="#">Диваны для кафе и ресторанов</a></li>
+                                        <li><a href="#">Распродажа диванов</a></li>
+                                    </ul>
+                                </div>
+                                <div class="header-m__catalog-opend__content-main__link-right">
+                                    <ul>
+                                        <li>Кресла и пуфы</li>
+                                        <li><a href="#">Кресла</a></li>
+                                        <li><a href="#">Раскладные кресла</a></li>
+                                        <li><a href="#">Пуфы</a></li>
+                                        <li><a href="#">Банкетки</a></li>
+                                    </ul> 
+                                    <ul>
+                                        <li>Аксессуары для диванов</li>
+                                        <li><a href="#">Декоративные подушки</a></li>
+                                        <li><a href="#">Пледы и покрывала</a></li>
+                                        <li><a href="#">Декоративные подлокотники</a></li>
+                                        <li><a href="#">Средства по уходу за мебелью</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="header-m__catalog-opend__content-main__box-bottom">
+                                <a href="#">Смотреть все диваны и кресла</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-m__catalog-opend__content-main" id="bedsMattresses">
+                        <div class="header-m__catalog-opend__content-main__boxs">
+                            <div class="header-m__catalog-opend__content-main__box-top hover__line-effect">
+                                <a href="#">Кровати и матрассы</a>
+                            </div>
+                            <div class="header-m__catalog-opend__content-main__box-sides">
+                                <div class="header-m__catalog-opend__content-main__link-left">
+                                    <ul>
+                                        <li><a href="#">Кровати</a></li>
+                                        <li><a href="#">Мягкие кровати</a></li>
+                                        <li><a href="#">Двуспальные кровати</a></li>
+                                        <li><a href="#">Модульные диваны</a></li>
+                                        <li><a href="#">Кушетки</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li>Диваны по назначению</li>
+                                        <li><a href="#">Диваны и кровати</a></li>
+                                        <li><a href="#">Мини диваны</a></li>
+                                        <li><a href="#">Детские диваны</a></li>
+                                        <li><a href="#">Ортопедические диваны</a></li>
+                                        <li><a href="#">Офисные диваны</a></li>
+                                        <li><a href="#">Диваны и кухни</a></li>
+                                        <li><a href="#">Диваны для кафе и ресторанов</a></li>
+                                        <li><a href="#">Распродажа диванов</a></li>
+                                    </ul>
+                                </div>
+                                <div class="header-m__catalog-opend__content-main__link-right">
+                                    <ul>
+                                        <li>Кресла и пуфы</li>
+                                        <li><a href="#">Кресла</a></li>
+                                        <li><a href="#">Раскладные кресла</a></li>
+                                        <li><a href="#">Пуфы</a></li>
+                                        <li><a href="#">Банкетки</a></li>
+                                    </ul> 
+                                    <ul>
+                                        <li>Аксессуары для диванов</li>
+                                        <li><a href="#">Декоративные подушки</a></li>
+                                        <li><a href="#">Пледы и покрывала</a></li>
+                                        <li><a href="#">Декоративные подлокотники</a></li>
+                                        <li><a href="#">Средства по уходу за мебелью</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="header-m__catalog-opend__content-main__box-bottom">
+                                <a href="#">Смотреть все диваны и кресла</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-m__catalog-opend__content-main" id="CabinetsShelving">
+                        <div class="header-m__catalog-opend__content-main__boxs">
+                            <div class="header-m__catalog-opend__content-main__box-top hover__line-effect">
+                                <a href="#">Шкафы и стеллажи</a>
+                            </div>
+                            <div class="header-m__catalog-opend__content-main__box-sides">
+                                <div class="header-m__catalog-opend__content-main__link-left">
+                                    <ul>
+                                        <li><a href="#">Кровати</a></li>
+                                        <li><a href="#">Мягкие кровати</a></li>
+                                        <li><a href="#">Двуспальные кровати</a></li>
+                                        <li><a href="#">Модульные диваны</a></li>
+                                        <li><a href="#">Кушетки</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li>Диваны по назначению</li>
+                                        <li><a href="#">Диваны и кровати</a></li>
+                                        <li><a href="#">Мини диваны</a></li>
+                                        <li><a href="#">Детские диваны</a></li>
+                                        <li><a href="#">Ортопедические диваны</a></li>
+                                        <li><a href="#">Офисные диваны</a></li>
+                                        <li><a href="#">Диваны и кухни</a></li>
+                                        <li><a href="#">Диваны для кафе и ресторанов</a></li>
+                                        <li><a href="#">Распродажа диванов</a></li>
+                                    </ul>
+                                </div>
+                                <div class="header-m__catalog-opend__content-main__link-right">
+                                    <ul>
+                                        <li>Кресла и пуфы</li>
+                                        <li><a href="#">Кресла</a></li>
+                                        <li><a href="#">Раскладные кресла</a></li>
+                                        <li><a href="#">Пуфы</a></li>
+                                        <li><a href="#">Банкетки</a></li>
+                                    </ul> 
+                                    <ul>
+                                        <li>Аксессуары для диванов</li>
+                                        <li><a href="#">Декоративные подушки</a></li>
+                                        <li><a href="#">Пледы и покрывала</a></li>
+                                        <li><a href="#">Декоративные подлокотники</a></li>
+                                        <li><a href="#">Средства по уходу за мебелью</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="header-m__catalog-opend__content-main__box-bottom">
+                                <a href="#">Смотреть все диваны и кресла</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-m__nav">
+                <ul>
+                    <li><a href="#">Журналы</a></li>
+                    <li><a href="#">Шоурумы</a></li>
+                </ul>
+            </div>
+            <div class="header-m__search">
+                <input type="search" placeholder="Введите запрос">
+                <button>Найти</button>
+            </div>
+            <div class="header-m__links">
+                <div class="header-m__links-favorite"><span class="material-symbols-outlined">
+                    favorite
+                    </span></div>
+                <div class="header-m__links-cart"><span class="material-symbols-outlined">
+                    shopping_cart
+                    </span></div>
+            </div>
+        </div>
+        <div class="header-b">
+            <div class="header-b__sale">
+                <ul>
+                        <li><span class="material-symbols-outlined">percent</span><a href="#">Своё найдется!</a></li>
+                        <li><a href="#">Садовая мебель</a></li>
+                        <li><a href="#">Как с картинки!</a></li>
+                        <li><a href="#">Коллекция «Цветы»</a></li>
+                        <li><a href="#">Новинки</a></li>
+                        <li><a href="#">Мебель в наличии</a></li>
+                        <li><a href="#">Ликвидация</a></li>
+                </ul>
+            </div>
+        </div>    
+        <div class="header-slider">
+            <!-- Слайды -->
+            <div class="header-slider__boxs">
+                <div class="header-slider__box s1"><img src="/assets/images/slide2.jpg" alt="img1">
+                    <div class="header-slider__content">
+                        <div class="header-slider__box-title">Высыпайся на здоровье!</div>
+                        <div class="header-slider__box-text">Все для спальни со скидками до 20%</div>
+                        <div class="header-slider__box-link"><a href="#">Купить</a></div>
+                    </div></div>
+                <div class="header-slider__box s2"><img src="/assets/images/slide1.jpg" alt="img2">
+                    <div class="header-slider__content">
+                        <div class="header-slider__box-title">Let's outdoor</div>
+                        <div class="header-slider__box-text">Коллекция мебели для дома и сада</div>
+                        <div class="header-slider__box-link"><a href="#">Купить</a></div>
+                    </div>
+                </div>
+                <div class="header-slider__box s3"><img src="/assets/images/slide3.jpg" alt="img3">
+                    <div class="header-slider__content">
+                        <div class="header-slider__box-title">Дни майских скидок</div>
+                        <div class="header-slider__box-text">Распродажа стильной мебели и товары для дома</div>
+                        <div class="header-slider__box-link"><a href="#">Купить</a></div>
+                    </div>
+                </div>
+                
+                <!-- Добавление или удаление слайдов изменит эту часть -->
+            </div>
+            <!-- Контролы -->
+            <span class="material-symbols-outlined header-slider__control" id="slidePrev">chevron_left</span>
+            <span class="material-symbols-outlined header-slider__control" id="slideNext">chevron_right</span>
+            
+            <!-- Пагинация -->
+            <div class="header-slider__pagination"></div>
+        </div>  
+        <div class="content-main">
+            <div class="content-main__title">Диваны в Минске</div>
+            <div class="content-main__describe">В интернет-магазине Divan.by представлены только тщательно отобранные модели диванов, мягкой и корпусной мебели. Каждая модель из нашего интернет каталога – это воплощение отличного дизайна, легенда мебельной отрасли.</div>
+            <!-- slide wrapper -->
+            <div class="content-main__slide-wrapper">
+            <div class="content-main__slide">
+                <div class="content-main__slide-box">
+                    <div class="content-main__slide-img">
+                        <a href="#"><img src="/assets/images/sofas content/Bucle Silver.jpg" alt="image"></a>
+                        <div class="content-main__slide-favorite">
+                            <span class="material-symbols-outlined">favorite</span>
+                        </div>
+                    </div>
+                    <div class="content-main__slide-title">
+                      <a href="#">Диван угловой Онте Bucle Silver</a>  
+                    </div>
+                    <div class="content-main__slide-price">
+                        2970 руб. 
+                    </div>
+                </div>
+                <div class="content-main__slide-box">
+                    <div class="content-main__slide-img">
+                        <a href="#"><img src="/assets/images/sofas content/Bucle Silver.jpg" alt="image"></a>
+                        <div class="content-main__slide-favorite">
+                            <span class="material-symbols-outlined">favorite</span>
+                        </div>
+                    </div>
+                    <div class="content-main__slide-title">
+                      <a href="#">Диван угловой Онте Bucle Silver</a>  
+                    </div>
+                    <div class="content-main__slide-price">
+                        2970 руб. 
+                    </div>
+                </div>
+                <div class="content-main__slide-box">
+                    <div class="content-main__slide-img">
+                        <a href="#"><img src="/assets/images/sofas content/Bucle Silver.jpg" alt="image"></a>
+                        <div class="content-main__slide-favorite">
+                            <span class="material-symbols-outlined">favorite</span>
+                        </div>
+                    </div>
+                    <div class="content-main__slide-title">
+                      <a href="#">Диван угловой Онте Bucle Silver</a>  
+                    </div>
+                    <div class="content-main__slide-price">
+                        2970 руб. 
+                    </div>
+                </div>
+                <div class="content-main__slide-box">
+                    <div class="content-main__slide-img">
+                        <a href="#"><img src="/assets/images/sofas content/Bucle Silver.jpg" alt="image"></a>
+                        <div class="content-main__slide-favorite">
+                            <span class="material-symbols-outlined">favorite</span>
+                        </div>
+                    </div>
+                    <div class="content-main__slide-title">
+                      <a href="#">Диван угловой Онте Bucle Silver</a>  
+                    </div>
+                    <div class="content-main__slide-price">
+                        2970 руб. 
+                    </div>
+                </div>
+                <div class="content-main__slide-box">
+                    <div class="content-main__slide-img">
+                        <a href="#"><img src="/assets/images/sofas content/Bucle Silver.jpg" alt="image"></a>
+                        <div class="content-main__slide-favorite">
+                            <span class="material-symbols-outlined">favorite</span>
+                        </div>
+                    </div>
+                    <div class="content-main__slide-title">
+                      <a href="#">Диван угловой Онте Bucle Silver</a>  
+                    </div>
+                    <div class="content-main__slide-price">
+                        2970 руб. 
+                    </div>
+                </div>
+                <div class="content-main__slide-box">
+                    <div class="content-main__slide-img">
+                        <a href="#"><img src="/assets/images/sofas content/Bucle Silver.jpg" alt="image"></a>
+                        <div class="content-main__slide-favorite">
+                            <span class="material-symbols-outlined">favorite</span>
+                        </div>
+                    </div>
+                    <div class="content-main__slide-title">
+                      <a href="#">Диван угловой Онте Bucle Silver</a>  
+                    </div>
+                    <div class="content-main__slide-price">
+                        2970 руб. 
+                    </div>
+                </div>
+            </div>
+            <div class="slider-track">
+                <div class="slider-thumb"></div>
+            </div>
+        </div>
+        </div>  
+        <div class="content-main">
+            <div class="content-main__title">Рекомендуем сегодня</div>
+            <!-- slide wrapper -->
+            <div class="content-main__slide-wrapper">
+            <div class="content-main__slide">
+                <div class="content-main__today-box">
+                    <div class="content-main__today-box__main">
+                      <a href="#"><img src="/assets/images/today/img (3).jpg" alt="picture"></a>
+                                <div class="content-main__today-box__main-content__date">6 - 20 мая</div>
+                                <div class="content-main__today-box__main-content__sale">до - 40%</div>
+                                <div class="content-main__today-box__main-content__title">Высыпайся на здоровье!</div>
+                                <div class="content-main__today-box__main-content__descr">Все для спальни со скидками</div>
+                    </div>
+                </div>
+                <div class="content-main__today-box">
+                    <div class="content-main__today-box__main">
+                       <a href="#"><img src="/assets/images/today/img (2).jpg" alt="picture"></a>
+                                <div class="content-main__today-box__main-content__date">17 - 20 мая</div>
+                                <div class="content-main__today-box__main-content__sale">до - 40%</div>
+                                <div class="content-main__today-box__main-content__title">OUTLET SALE</div>
+                                <div class="content-main__today-box__main-content__descr">Распродажа мебели и товаров для дома</div>
+                </div>
+            </div>
+                <div class="content-main__today-box">
+                    <div class="content-main__today-box__main">
+                        <a href="#"><img src="/assets/images/today/img (9).jpg" alt="picture"></a>
+                        <div class="content-main__today-box__main-content">
+                                <div class="content-main__today-box__main-content__date _white-color">6 мая - 2 июня</div>
+                                <div class="content-main__today-box__main-content__sale">до - 25%</div>
+                                <div class="content-main__today-box__main-content__title _white-color">Уже тепло</div>
+                                <div class="content-main__today-box__main-content__descr _white-color">Коллекция мебели для дома и сада со скидками</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-main__today-box">
+                    <div class="content-main__today-box__main">
+                        <a href="#"><img src="/assets/images/today/img (1).jpg" alt="picture"></a>
+                        <div class="content-main__today-box__main-content">
+                                <div class="content-main__today-box__main-content__title">Elax</div>
+                                <div class="content-main__today-box__main-content__descr">Инновационный наполнитель мягкой мебели</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-main__today-box">
+                    <div class="content-main__today-box__main">
+                        <a href="#"><img src="/assets/images/today/img (4).jpg" alt="picture"></a>
+                        <div class="content-main__today-box__main-content">
+                                <div class="content-main__today-box__main-content__title">Бесплатная доставка!</div>
+                                <div class="content-main__today-box__main-content__descr">Привезем бесплатно при заказе от 2500 руб!</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-main__today-box">
+                    <div class="content-main__today-box__main">
+                        <a href="#"><img src="/assets/images/today/img (5).jpg" alt="picture"></a>
+                        <div class="content-main__today-box__main-content">
+                                <div class="content-main__today-box__main-content__title _white-color">Мебель в наличии</div>
+                                <div class="content-main__today-box__main-content__descr _white-color">Поможем создать уютный дом!</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-main__today-box">
+                    <div class="content-main__today-box__main">
+                        <a href="#"><img src="/assets/images/today/img (6).jpg" alt="picture"></a>
+                        <div class="content-main__today-box__main-content">
+                                <div class="content-main__today-box__main-content__title _white-color">Цветы</div>
+                                <div class="content-main__today-box__main-content__descr _white-color">Эстетика цветочных рынков мира</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-main__today-box">
+                    <div class="content-main__today-box__main">
+                        <a href="#"><img src="/assets/images/today/img (7).jpg" alt="picture"></a>
+                        <div class="content-main__today-box__main-content">
+                                <div class="content-main__today-box__main-content__title _white-color">LET'S OUTDOOR</div>
+                                <div class="content-main__today-box__main-content__descr _white-color">Коллекция мебели для дома и сада</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-main__today-box">
+                    <div class="content-main__today-box__main">
+                        <a href="#"><img src="/assets/images/today/img (8).jpg" alt="picture"></a>
+                        <div class="content-main__today-box__main-content">
+                            <div class="content-main__today-box__main-content__date">20 мая - 30 июня</div>
+                            <div class="content-main__today-box__main-content__sale">до - 25%</div>
+                            <div class="content-main__today-box__main-content__title">ОБНОВЛЯЙ ИНТЕРЬЕТ В РАССРОЧКУ!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-track">
+                <div class="slider-thumb"></div>
+            </div>
+        </div>
+        </div>  
+        <div class="content-popular ">
+            <h1>Популярные категории</h1>
+            <div class="content-popular__boxes content-main__slide">
+                <div class="content-popular__boxes-first">
+                    <div class="content-popular__boxes__big-one">
+                        <a href="#"><img src="/assets/images/popular category/pramye_divany.jpg" alt="divany"></a>
+                        <p class="content-popular__title">Прямые диваны</p>
+                        <p class="content-popular__price">от 694 руб.</p>
+                    </div>
+                    <div class="content-popular__boxes__big-two">
+                       <a href="#"><img src="/assets/images/popular category/raspasnye_skafy.jpg" alt="raspasnye"></a>
+                        <p class="content-popular__title">Шкафы распашные</p>
+                        <p class="content-popular__price">от 342 руб.</p>
+                    </div>
+                    <div class="content-popular__boxes__small-one">
+                        <a href="#"><img src="/assets/images/popular category/krovati.jpg" alt="krovati"></a>
+                        <p class="content-popular__title">Кровати</p>
+                        <p class="content-popular__price">от 421 руб.</p>
+                    </div>
+                    <div class="content-popular__boxes__small-two">
+                        <a href="#"><img src="/assets/images/popular category/matrasy.jpg" alt="matrasy"></a>
+                        <p class="content-popular__title">Матрасы</p>
+                        <p class="content-popular__price">от 110 руб.</p>
+                    </div>
+                    <div class="content-popular__boxes__small-three">
+                        <a href="#"></a> <img src="/assets/images/popular category/komody.jpg" alt="komody"></a>
+                        <p class="content-popular__title">Комоды</p>
+                        <p class="content-popular__price">от 219 руб.</p>
+                    </div>
+                    <div class="content-popular__boxes__small-four">
+                        <a href="#"><img src="/assets/images/popular category/uglovye-divany.jpg" alt="divany"></a>
+                        <p class="content-popular__title">Диваны угловые</p>
+                        <p class="content-popular__price">от 1188 руб.</p>
+                    </div>
+                </div>
+                <div class="content-popular__boxes-second">
+                    <div class="content-popular__boxes__big-three">
+                        <a href="#"><img src="/assets/images/popular category/pramye_divany.jpg" alt="komody"></a>
+                        <p class="content-popular__title">Прямые диваны</p>
+                        <p class="content-popular__price">от 694 руб.</p>
+                    </div>
+                    <div class="content-popular__boxes__big-four">
+                        <a href="#"><img src="/assets/images/popular category/raspasnye_skafy.jpg" alt="raspasnye"></a>
+                        <p class="content-popular__title">Шкафы распашные</p>
+                        <p class="content-popular__price">от 342 руб.</p>
+                    </div>
+                    <div class="content-popular__boxes__small-five">
+                        <a href="#"><img src="/assets/images/popular category/krovati.jpg" alt="raspasnye"></a>
+                        <p class="content-popular__title">Кровати</p>
+                        <p class="content-popular__price">от 421 руб.</p>
+                    </div>
+                    <div class="content-popular__boxes__small-six">
+                        <a href="#"><img src="/assets/images/popular category/matrasy.jpg" alt="matrasy"></a>
+                        <p class="content-popular__title">Матрасы</p>
+                        <p class="content-popular__price">от 110 руб.</p>
+                    </div>
+                    <div class="content-popular__boxes__small-seven">
+                        <a href="#"><img src="/assets/images/popular category/komody.jpg" alt="komody"></a>
+                        <p class="content-popular__title">Комоды</p>
+                        <p class="content-popular__price">от 219 руб.</p>
+                    </div>
+                    <div class="content-popular__boxes__small-eight">
+                        <a href="#"></a><img src="/assets/images/popular category/uglovye-divany.jpg" alt="komody"></a>
+                        <p class="content-popular__title">Диваны угловые</p>
+                        <p class="content-popular__price">от 1188 руб.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-track">
+                <div class="slider-thumb"></div>
+            </div>
+        </div>
+        <div class="content-ideas">
+            <h1>Идеи для дома</h1>
+            <div class="content-ideas__boxs">
+                <div class="content-ideas__boxs-content visible">
+                    <div class="content-ideas__boxs-content__section">
+                        <div class="content-ideas__boxs-content__section-item-1">
+                            <img src="/assets/images/main ideas/1.jpg" alt="img1">
+                            <div class="content-ideas__boxs-content__point-1 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-ideas__boxs-content__section-item-2">
+                            <img src="/assets/images/main ideas/2.jpg" alt="img2">
+                            <div class="content-ideas__boxs-content__point-2 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in">
+                                  </div>
+                            </div>
+                            <div class="content-ideas__boxs-content__point-3 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-ideas__boxs-content__section-item-2">
+                            <img src="/assets/images/main ideas/3.jpg" alt="img3">
+                            <div class="content-ideas__boxs-content__point-4 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in">
+                                </div>
+                            </div>
+                            <div class="content-ideas__boxs-content__point-5 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in"></div>
+                            </div>
+                        </div>
+                        
+                    </div>  
+                    <div class="content-ideas__boxs-content__section">
+                        <div class="content-ideas__boxs-content__section-item-2">
+                            <img src="/assets/images/main ideas/4.jpg" alt="img4">
+                            <div class="content-ideas__boxs-content__point-6 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in"></div>
+                            </div>
+                            <div class="content-ideas__boxs-content__point-7 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in"></div>
+                            </div>
+                            <div class="content-ideas__boxs-content__point-8 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in"></div>
+                            </div>
+                        </div>
+                        <div class="content-ideas__boxs-content__section-item-2">
+                            <img src="/assets/images/main ideas/5.jpg" alt="img5">
+                            <div class="content-ideas__boxs-content__point-9 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in"></div>
+                            </div>
+                        </div>
+                        <div class="content-ideas__boxs-content__section-item-1">
+                            <img src="/assets/images/main ideas/6.jpg" alt="img6">
+                            <div class="content-ideas__boxs-content__point-10 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in">
+                                </div>
+                            </div>
+                            <div class="content-ideas__boxs-content__point-11 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in">
+                                </div>     
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-ideas__boxs-content__section">
+                        <div class="content-ideas__boxs-content__section-item-1">
+                            <img src="/assets/images/main ideas/7.jpg" alt="img7">
+                            <div class="content-ideas__boxs-content__point-12 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in"></div>      
+                            </div>
+                        </div>
+                        <div class="content-ideas__boxs-content__section-item-2">
+                            <img src="/assets/images/main ideas/8.jpg" alt="img8">
+                            <div class="content-ideas__boxs-content__point-13 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in"></div>      
+                            </div>
+                            <div class="content-ideas__boxs-content__point-14 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in"></div>      
+                            </div>
+                            <div class="content-ideas__boxs-content__point-15 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in"></div>      
+                            </div>
+                            <div class="content-ideas__boxs-content__point-16 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in"></div>      
+                            </div>
+                            <div class="content-ideas__boxs-content__point-17 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in"></div>      
+                            </div>
+                            <div class="content-ideas__boxs-content__point-18 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in"></div>      
+                            </div>
+                        </div>
+                        <div class="content-ideas__boxs-content__section-item-2">
+                            <img src="/assets/images/main ideas/9.jpg" alt="img9">
+                            <div class="content-ideas__boxs-content__point-19 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in"></div>      
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-ideas__boxs-content__section">
+                        <div class="content-ideas__boxs-content__section-item-2">
+                            <img src="/assets/images/main ideas/10.jpg" alt="img10">
+                            <div class="content-ideas__boxs-content__point-20 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in"></div>      
+                            </div>
+                            <div class="content-ideas__boxs-content__point-21 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in"></div>      
+                            </div>
+                        </div>
+                        <div class="content-ideas__boxs-content__section-item-2">
+                            <img src="/assets/images/main ideas/11.jpg" alt="img11">
+                            <div class="content-ideas__boxs-content__point-22 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in"></div>    
+                            </div>
+                            <div class="content-ideas__boxs-content__point-23 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in"></div>      
+                            </div>
+                            <div class="content-ideas__boxs-content__point-24 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in"></div>      
+                            </div> 
+                        </div>
+                        <div class="content-ideas__boxs-content__section-item-1">
+                            <img src="/assets/images/main ideas/12.jpg" alt="img12">
+                            <div class="content-ideas__boxs-content__point-25 content-ideas__boxs-content__point">
+                                <div class="content-ideas__boxs-content__point-in"></div>      
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="content-ideas__button" id="showMoreBtn">Показать ещё</button>
+            </div>
+        </div>
+        <div class="content-new">
+            <h1>Каталог новинок</h1>
+            <p>Divan.by предлагает своим покупателям современную мебель собственного производства и готовы гарантировать не только высокое качество изделий, но и доступную цену. А наши регулярные акции и специальные предложения приятно удивят!</p>
+            <div class="content-main__slide">
+                <div class="content-main__slide-box">
+                    <div class="content-main__slide-img">
+                        <a href="#"><img src="/assets/images/content new/90 Velvet Pink.jpg" alt="image"></a>
+                        <div class="content-main__slide-favorite">
+                            <span class="material-symbols-outlined">favorite</span>
+                        </div>
+                    </div>
+                    <div class="content-main__slide-title">
+                      <a href="#">Кровать Мидли 90 Velvet Pink</a>  
+                    </div>
+                    <div class="content-main__slide-price">
+                        1600 руб. 
+                    </div>
+                </div>
+                <div class="content-main__slide-box">
+                    <div class="content-main__slide-img">
+                        <a href="#"><img src="/assets/images/content new/textile gray.jpg" alt="image"></a>
+                        <div class="content-main__slide-favorite">
+                            <span class="material-symbols-outlined">favorite</span>
+                        </div>
+                    </div>
+                    <div class="content-main__slide-title">
+                      <a href="#">Модульный диван Хайленд Textile Grey</a>  
+                    </div>
+                    <div class="content-main__slide-price">
+                        5840 руб. 
+                    </div>
+                </div>
+                <div class="content-main__slide-box">
+                    <div class="content-main__slide-img">
+                        <a href="#"><img src="/assets/images/content new/Velvet Terra.jpg" alt="image"></a>
+                        <div class="content-main__slide-favorite">
+                            <span class="material-symbols-outlined">favorite</span>
+                        </div>
+                    </div>
+                    <div class="content-main__slide-title">
+                      <a href="#">Диван угловой Бонент Velvet Terra</a>  
+                    </div>
+                    <div class="content-main__slide-price">
+                        3552 руб. 
+                    </div>
+                </div>
+                <div class="content-main__slide-box">
+                    <div class="content-main__slide-img">
+                        <a href="#"><img src="/assets/images/content new/Grey nesta-1.jpg" alt="image"></a>
+                        <div class="content-main__slide-favorite">
+                            <span class="material-symbols-outlined">favorite</span>
+                        </div>
+                    </div>
+                    <div class="content-main__slide-title">
+                      <a href="#">Прихожая Неста-1 Grey</a>  
+                    </div>
+                    <div class="content-main__slide-price">
+                        968 руб. 
+                    </div>
+                </div>
+                <div class="content-main__slide-box">
+                    <div class="content-main__slide-img">
+                        <a href="#"><img src="/assets/images/content new/archi.jpg" alt="image"></a>
+                        <div class="content-main__slide-favorite">
+                            <span class="material-symbols-outlined">favorite</span>
+                        </div>
+                    </div>
+                    <div class="content-main__slide-title">
+                      <a href="#">Полка Арчи-2 Plywood</a>  
+                    </div>
+                    <div class="content-main__slide-price">
+                        2970 руб. 
+                    </div>
+                </div>
+                <div class="content-main__slide-box">
+                    <div class="content-main__slide-img">
+                        <a href="#"><img src="/assets/images/content new/divan.jpg" alt="image"></a>
+                        <div class="content-main__slide-favorite">
+                            <span class="material-symbols-outlined">favorite</span>
+                        </div>
+                    </div>
+                    <div class="content-main__slide-title">
+                      <a href="#">Диван Марей Soft Olive</a>  
+                    </div>
+                    <div class="content-main__slide-price">
+                        3593 руб. 
+                    </div>
+                </div>
+            </div>
+            <div class="slider-track">
+                <div class="slider-thumb"></div>
+            </div>
+        </div>
+        <div class="content-map">
+            <h1>Лучше один раз увидеть!</h1>
+            <p>Команда Divan.by старается не только предложить самый актуальный ассортимент диванов и мягкой мебели, но и предоставить покупателю все возможности быть уверенным в своей покупке. Приглашаем вас посетить наши фирменные шоурумы и лично оценить качество используемых материалов и тканей, проверить комфортность пружинных блоков и механизмов, а также убедиться в удобстве и надежности нашей продукции!</p>
+            <div class="content-map__information">
+                <h3>Адреса магазинов в Беларуси</h3>
+                    <iframe src="https://my.atlist.com/map/f8a83d1f-bf68-4292-bd58-13acac57e8f4/?share=true" allow="geolocation 'self' https://my.atlist.com" width="100%" height="500px" loading="lazy" frameborder="0" scrolling="no" allowfullscreen id="atlist-embed"></iframe>
+            </div>
+           
+            
+        </div>
+        <div class="content-inspiration">
+            <h1>Ищите вдохновение в Инстаграм @official_divan.by</h1>
+            <p>Cтилизуете интерьер вместе с Divan.by – отмечайте @official_divan.by на фото в своем аккаунте Instagram, добавляйте хештег #мебельначинаетсясдивана. Мы публикуем лучшие кадры.</p>
+            <div class="content-inspiration__images">
+                <div class="content-inspiration__images-item">
+                    <div class="content-inspiration__images-item__add">
+                        <h1>Хотите здесь увидеть свое фото?</h1>
+                        <p>Отмечайте <a href="#">@official_divan.by</a> в своих публикациях</p>
+                        <button class="content-inspiration__images-item__add-button">Смотреть фотографии</button>
+                    </div>
+                </div>
+                <div class="content-inspiration__images-item">
+                    <img src="/assets/images/content inspiration/1.jpg" alt="img">
+                </div>
+                <div class="content-inspiration__images-item">
+                    <img src="/assets/images/content inspiration/2.jpg" alt="img">
+                </div>
+                <div class="content-inspiration__images-item">
+                    <img src="/assets/images/content inspiration/3.jpg" alt="img">
+                </div>
+            </div>
+        </div>
+        <div class="content-information">
+            <h1>Больше, чем интернет-магазин мебели</h1>
+            <h3>Диваны от производителя Divan.by</h3>
+            <p>Для команды Divan.by мебель для дома — объект искреннего интереса и увлечения. Мы убеждены, что она должна быть удобной, функциональной и долговечной. Поэтому выбираем лучшие материалы, расширяем производственные возможности, следим за трендами мебельной моды и предлагаем самые актуальные интерьерные решения. С нами вы создадите неповторимый уют и комфорт.</p>
+            <p>Помимо моделей собственного производства, в нашем ассортименте представлены изделия от ведущих отечественных производителей.</p>
+            <p>В каталоге компании Divan.by представлен широкий ассортимент мягкой и корпусной мебели от производителя — диваны, кресла, пуфики, банкетки, кровати, шкафы, стеллажи, комоды, прикроватные тумбы, тв-тумбы, готовые спальни, гостиные, прихожие, обувницы, вешалки, столы, стулья, мебель кухни, а также товары для дома и ортопедические матрасы.</p>
+            <p>Вы можете недорого купить мебель в Минске онлайн или сделать заказ в фирменном шоуруме. А если нужна консультация специалиста — заказывайте обратный звонок!</p>
+            <h3>Преимущества интернет-магазина Divan.by</h3>
+            <ul>
+                <li>Огромный ассортимент — всё для обустройства любой комнаты;</li>
+                <li>Онлайн-конструктор мебели для создания уникальных моделей;</li>
+                <li>Регулярные акции, скидки и распродажи до 50%, что делает цены еще доступнее;</li>
+                <li>Быстрая доставка по всем городам Беларуси (с 11:00 до 23:00);</li>
+                <li>Продажа в рассрочку до 6 месяцев и в кредит;</li>
+                <li>Гарантия качества от производителей — от 18 месяцев;</li>
+                <li>Полезный блог для вдохновения, знакомства с трендами и дизайн-проектами</li>
+            </ul>
+        </div>
+        <div class="footer">
+            <div class="footer-links">
+                <div class="footer-links__item">
+                    <ul>
+                        <li class="footer-links__item-title">Свяжитесь с нами</li>
+                        <li><a href="#">+375 44 7198185</a></li>
+                        <li><a href="#">love@divan.by</a></li>
+                        <li><a href="#">Перезвоните мне</a></li>
+                        <li><a href="#">Задать вопрос</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Написать руководству</a></li>
+                    </ul>
+                    <ul>
+                        <li class="footer-links__item-title">Свяжитесь с нами</li>
+                        <li>ежедневно с 09:00 до 21:00</li>
+                        <li class="footer-links__item-title">Доставка заказов</li>
+                        <li>пн-пт: с 11:00 до 23:00 сб-вс: с 11:00 до 21:00</li>
+                    </ul>
+                    <ul>
+                        <li class="footer-links__item-title">Информация для покупателей</li>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Шоурумы</a></li>
+                        <li><a href="#">Конструктор</a></li>
+                        <li><a href="#">Доставка и сборка</a></li>
+                        <li><a href="#">Способы оплаты</a></li>
+                        <li><a href="#">Рассрочка и кредит</a></li>
+                        <li><a href="#">Гарантия</a></li>
+                        <li><a href="#">Карта сайта</a></li>
+                        <li><a href="#">Договор оферты</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="#">Политика в отношении обработки cookie</a></li>
+                    </ul>
+                    <ul>
+                        <li class="footer-links__item-title">Каталог</li>
+                        <li><a href="#">Мягкая мебель</a></li>
+                        <li><a href="#">Корпусная мебель</a></li>
+                        <li><a href="#">Распродажа мебели</a></li>
+                    </ul>
+                    <div>
+                        <p>Платежные системы</p>
+                        <p>VISA</p>
+                        <p>Mastercard</p>
+                        <p>белкарт</p>
+                        <p>bepaid</p>
+                        <p>ООО «ДИВАН БАЙ»</p>
+                    </div>
+                </div>
+                <div class="footer-links__bottom">
+                    <div class="footer-links__bottom-logo">
+                        <a href="/index.html">divan.by</a>
+                    </div>
+                    <div class="footer-links__bottom-copyright">Все ресурсы сайта www.divan.by, включая текстовую, графическую и видео информацию, структуру и оформление страниц, защищены законами и соглашениями об охране авторских прав и интеллектуальной собственности. ©2013-2024. Divan.by - электронный каталог диванов и другой мебели в Минске. Все права защищены.</div>
+                </div>
+            </div>
+        </div>
+       </div>
+</body>
+</html>
